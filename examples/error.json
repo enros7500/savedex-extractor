@@ -1,0 +1,77 @@
+{
+  "schema_version": "3.0.0",
+  "request_id": "example_error",
+  "status": "error",
+  "generated_at": "2026-11-10T20:38:50.354803+00:00",
+  "source": {
+    "input_url": "https://www.instagram.com/p/EXAMPLE1234/",
+    "canonical_url": null,
+    "platform": "unknown",
+    "post_id": null,
+    "publisher_author": null,
+    "media_kind": "unknown",
+    "asset_count": null,
+    "inventory_complete": false,
+    "assets": []
+  },
+  "request_context": {
+    "instructions": "",
+    "output_language": "en",
+    "visual_processing": "auto"
+  },
+  "topic": {
+    "category": "unknown",
+    "label": "Unknown topic",
+    "basis": "unknown",
+    "certainty": "unknown",
+    "evidence_ids": [],
+    "reason": "No usable content has been reviewed for this result."
+  },
+  "routing": {
+    "initial_choice": "uncertain",
+    "signals": [],
+    "steps": []
+  },
+  "coverage": {
+    "scope": "reviewed_sources_only",
+    "sufficiency": "not_assessed",
+    "examined_asset_ids": [],
+    "unexamined_asset_ids": [],
+    "transcript_ranges": [],
+    "visual_positions": [],
+    "missing_information": [],
+    "limitations": [
+      "No content was processed; extraction coverage has not been assessed."
+    ]
+  },
+  "items": [],
+  "collections": [],
+  "evidence": [],
+  "processing": {
+    "profile": "local_baseline_v1",
+    "operations": [],
+    "privacy": {
+      "external_inference_used": false,
+      "external_web_lookup_used": false,
+      "raw_media_retention": "delete_after_request",
+      "result_retention": "caller_managed"
+    }
+  },
+  "issues": [
+    {
+      "code": "ACCESS_UNAVAILABLE",
+      "stage": "access",
+      "severity": "error",
+      "message": "The publication is unavailable without authentication.",
+      "affected_asset_ids": [],
+      "affected_item_ids": [],
+      "retryable": true
+    }
+  ],
+  "extensions": {},
+  "task": "extract",
+  "follow_up": {
+    "extraction_gaps": [],
+    "research_opportunities": []
+  }
+}

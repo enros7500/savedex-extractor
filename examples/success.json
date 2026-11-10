@@ -1,0 +1,288 @@
+{
+  "schema_version": "3.0.0",
+  "request_id": "example_tool",
+  "status": "success",
+  "generated_at": "2026-11-10T20:38:50.160415+00:00",
+  "source": {
+    "input_url": "https://www.instagram.com/p/EXAMPLE1234/",
+    "canonical_url": "https://www.instagram.com/p/EXAMPLE1234/",
+    "platform": "instagram",
+    "post_id": "EXAMPLE1234",
+    "publisher_author": "example_creator",
+    "media_kind": "video",
+    "asset_count": 1,
+    "inventory_complete": true,
+    "assets": [
+      {
+        "id": "asset1",
+        "index": 1,
+        "kind": "video",
+        "duration_ms": null,
+        "available": false,
+        "processed": false
+      }
+    ]
+  },
+  "request_context": {
+    "instructions": "",
+    "output_language": "en",
+    "visual_processing": "auto"
+  },
+  "topic": {
+    "category": "software_tools",
+    "label": "Tool and procedure described by the author",
+    "basis": "inferred",
+    "certainty": "uncertain",
+    "evidence_ids": [
+      "d1"
+    ],
+    "reason": "Local classification of the reviewed content; not external verification."
+  },
+  "routing": {
+    "initial_choice": "description_only",
+    "signals": [],
+    "steps": []
+  },
+  "coverage": {
+    "scope": "reviewed_sources_only",
+    "sufficiency": "sufficient",
+    "examined_asset_ids": [],
+    "unexamined_asset_ids": [
+      "asset1"
+    ],
+    "transcript_ranges": [],
+    "visual_positions": [],
+    "missing_information": [],
+    "limitations": [
+      "Reviewed sources only; identities, locations, and links have not been verified."
+    ]
+  },
+  "items": [
+    {
+      "id": "item1",
+      "type": "tool",
+      "title": "NotebookX",
+      "summary": "Tool presented by the author.",
+      "attribution": {
+        "publisher_author": "example_creator",
+        "speaker": null,
+        "basis": "publisher_only",
+        "evidence_ids": []
+      },
+      "evidence_ids": [
+        "d1"
+      ],
+      "uncertainties": [],
+      "data": {
+        "name": {
+          "value": "NotebookX",
+          "certainty": "known",
+          "evidence_ids": [
+            "d1"
+          ],
+          "reason": null
+        },
+        "purpose": {
+          "value": "Tool presented by the author.",
+          "certainty": "known",
+          "evidence_ids": [
+            "d1"
+          ],
+          "reason": "Paraphrase of the cited evidence."
+        },
+        "url_mentioned": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No sufficiently supported explicit value was extracted."
+        }
+      }
+    },
+    {
+      "id": "item2",
+      "type": "step",
+      "title": "Type your username",
+      "summary": "Type your username",
+      "attribution": {
+        "publisher_author": "example_creator",
+        "speaker": null,
+        "basis": "publisher_only",
+        "evidence_ids": []
+      },
+      "evidence_ids": [
+        "d1"
+      ],
+      "uncertainties": [],
+      "data": {
+        "action": {
+          "value": "Type your username",
+          "certainty": "known",
+          "evidence_ids": [
+            "d1"
+          ],
+          "reason": "Paraphrase of the cited evidence."
+        },
+        "prerequisites": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No sufficiently supported explicit value was extracted."
+        }
+      }
+    },
+    {
+      "id": "item3",
+      "type": "step",
+      "title": "Choose a template",
+      "summary": "Choose a template",
+      "attribution": {
+        "publisher_author": "example_creator",
+        "speaker": null,
+        "basis": "publisher_only",
+        "evidence_ids": []
+      },
+      "evidence_ids": [
+        "d1"
+      ],
+      "uncertainties": [],
+      "data": {
+        "action": {
+          "value": "Choose a template",
+          "certainty": "known",
+          "evidence_ids": [
+            "d1"
+          ],
+          "reason": "Paraphrase of the cited evidence."
+        },
+        "prerequisites": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No sufficiently supported explicit value was extracted."
+        }
+      }
+    },
+    {
+      "id": "item4",
+      "type": "step",
+      "title": "Publish it to your profile",
+      "summary": "Publish it to your profile",
+      "attribution": {
+        "publisher_author": "example_creator",
+        "speaker": null,
+        "basis": "publisher_only",
+        "evidence_ids": []
+      },
+      "evidence_ids": [
+        "d1"
+      ],
+      "uncertainties": [],
+      "data": {
+        "action": {
+          "value": "Publish it to your profile",
+          "certainty": "known",
+          "evidence_ids": [
+            "d1"
+          ],
+          "reason": "Paraphrase of the cited evidence."
+        },
+        "prerequisites": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No sufficiently supported explicit value was extracted."
+        }
+      }
+    }
+  ],
+  "collections": [
+    {
+      "id": "procedure",
+      "label": "Steps described",
+      "kind": "ordered_steps",
+      "item_ids": [
+        "item2",
+        "item3",
+        "item4"
+      ],
+      "expected_count": null,
+      "expected_count_evidence_ids": [],
+      "order_semantics": "procedure",
+      "missing_count": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "d1",
+      "source_type": "author_description",
+      "method": "adapter",
+      "excerpt": "We built NotebookX. Type your username. Choose a template. Publish it to your profile.",
+      "language": "en",
+      "locator": {
+        "kind": "post",
+        "asset_id": null,
+        "time": null
+      },
+      "region": null,
+      "asset_sha256": null,
+      "operation_id": "op_access"
+    }
+  ],
+  "processing": {
+    "profile": "local_baseline_v1",
+    "operations": [
+      {
+        "id": "op_access",
+        "purpose": "acquisition",
+        "deployment": "local",
+        "compute_target": "not_applicable",
+        "implementation": "anonymous-platform-adapter",
+        "model": null,
+        "version": null,
+        "recipient": null,
+        "input_data": [
+          "url"
+        ]
+      },
+      {
+        "id": "op_extract",
+        "purpose": "extraction",
+        "deployment": "local",
+        "compute_target": "cpu",
+        "implementation": "grounded-patterns-v1",
+        "model": null,
+        "version": null,
+        "recipient": null,
+        "input_data": [
+          "description",
+          "transcript"
+        ]
+      }
+    ],
+    "privacy": {
+      "external_inference_used": false,
+      "external_web_lookup_used": false,
+      "raw_media_retention": "delete_after_request",
+      "result_retention": "caller_managed"
+    }
+  },
+  "issues": [],
+  "extensions": {
+    "runtime:metrics": {}
+  },
+  "task": "extract",
+  "follow_up": {
+    "extraction_gaps": [],
+    "research_opportunities": [
+      {
+        "id": "research_item1",
+        "item_id": "item1",
+        "kind": "official_website",
+        "reason": "No URL was extracted; the consumer may research it separately.",
+        "evidence_ids": [
+          "d1"
+        ]
+      }
+    ]
+  }
+}

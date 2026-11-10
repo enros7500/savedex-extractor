@@ -1,0 +1,917 @@
+{
+  "schema_version": "3.0.0",
+  "request_id": "backend_DffVQsux3Th",
+  "status": "success",
+  "generated_at": "2026-11-10T13:45:47.174332+00:00",
+  "source": {
+    "input_url": "https://www.instagram.com/p/DffVQsux3Th/",
+    "canonical_url": "https://www.instagram.com/p/DffVQsux3Th/",
+    "platform": "instagram",
+    "post_id": "DffVQsux3Th",
+    "publisher_author": "seans_hq",
+    "media_kind": "video",
+    "asset_count": 1,
+    "inventory_complete": true,
+    "assets": [
+      {
+        "id": "asset1",
+        "index": 1,
+        "kind": "video",
+        "duration_ms": 28864,
+        "available": true,
+        "processed": true
+      }
+    ]
+  },
+  "request_context": {
+    "instructions": "",
+    "output_language": "es",
+    "visual_processing": "auto"
+  },
+  "topic": {
+    "category": "career",
+    "label": "Empresas recomendadas para buscar trabajo",
+    "basis": "inferred",
+    "certainty": "uncertain",
+    "evidence_ids": [
+      "t2",
+      "d1",
+      "t4",
+      "t6",
+      "t7",
+      "t8",
+      "t9",
+      "t10",
+      "t11",
+      "t12",
+      "t13"
+    ],
+    "reason": "Clasificación local del contenido revisado; no es verificación externa."
+  },
+  "routing": {
+    "initial_choice": "text_first",
+    "signals": [],
+    "steps": [
+      {
+        "stage": "description",
+        "outcome": "completed",
+        "reason": "Descripción obtenida anónimamente.",
+        "input_evidence_ids": [
+          "d1"
+        ],
+        "remaining_gaps": []
+      },
+      {
+        "stage": "transcription",
+        "outcome": "completed",
+        "reason": "Medium CPU cuando hizo falta audio; no se analizaron imágenes si la extracción textual bastaba.",
+        "input_evidence_ids": [
+          "t1",
+          "t2",
+          "t3",
+          "t4",
+          "t5",
+          "t6",
+          "t7",
+          "t8",
+          "t9",
+          "t10",
+          "t11",
+          "t12",
+          "t13",
+          "t14",
+          "t15"
+        ],
+        "remaining_gaps": []
+      },
+      {
+        "stage": "extraction",
+        "outcome": "completed",
+        "reason": "Extracción local con citas comprobadas; sin investigación.",
+        "input_evidence_ids": [
+          "d1",
+          "t1",
+          "t2",
+          "t3",
+          "t4",
+          "t5",
+          "t6",
+          "t7",
+          "t8",
+          "t9",
+          "t10",
+          "t11",
+          "t12",
+          "t13",
+          "t14",
+          "t15"
+        ],
+        "remaining_gaps": []
+      }
+    ]
+  },
+  "coverage": {
+    "scope": "reviewed_sources_only",
+    "sufficiency": "sufficient",
+    "examined_asset_ids": [
+      "asset1"
+    ],
+    "unexamined_asset_ids": [],
+    "transcript_ranges": [
+      {
+        "asset_id": "asset1",
+        "time": {
+          "start_ms": 0,
+          "end_ms": 28864
+        }
+      }
+    ],
+    "visual_positions": [],
+    "missing_information": [],
+    "limitations": [
+      "Solo fuentes revisadas; no verificación de identidades, ubicaciones o enlaces."
+    ]
+  },
+  "items": [
+    {
+      "id": "item1",
+      "type": "recommendation",
+      "title": "GitLab",
+      "summary": "Enviar candidatura a GitLab.",
+      "attribution": {
+        "publisher_author": "seans_hq",
+        "speaker": null,
+        "basis": "publisher_only",
+        "evidence_ids": []
+      },
+      "evidence_ids": [
+        "t2",
+        "d1"
+      ],
+      "uncertainties": [],
+      "data": {
+        "action": {
+          "value": "Enviar candidatura a GitLab.",
+          "certainty": "known",
+          "evidence_ids": [
+            "t2",
+            "d1"
+          ],
+          "reason": "Paráfrasis de la evidencia citada."
+        },
+        "audience": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        },
+        "rationale": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        }
+      }
+    },
+    {
+      "id": "item2",
+      "type": "recommendation",
+      "title": "11 Labs",
+      "summary": "Enviar candidatura a 11 Labs.",
+      "attribution": {
+        "publisher_author": "seans_hq",
+        "speaker": null,
+        "basis": "publisher_only",
+        "evidence_ids": []
+      },
+      "evidence_ids": [
+        "t4",
+        "d1"
+      ],
+      "uncertainties": [],
+      "data": {
+        "action": {
+          "value": "Enviar candidatura a 11 Labs.",
+          "certainty": "known",
+          "evidence_ids": [
+            "t4",
+            "d1"
+          ],
+          "reason": "Paráfrasis de la evidencia citada."
+        },
+        "audience": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        },
+        "rationale": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        }
+      }
+    },
+    {
+      "id": "item3",
+      "type": "recommendation",
+      "title": "Upwind",
+      "summary": "Enviar candidatura a Upwind.",
+      "attribution": {
+        "publisher_author": "seans_hq",
+        "speaker": null,
+        "basis": "publisher_only",
+        "evidence_ids": []
+      },
+      "evidence_ids": [
+        "t6",
+        "d1"
+      ],
+      "uncertainties": [],
+      "data": {
+        "action": {
+          "value": "Enviar candidatura a Upwind.",
+          "certainty": "known",
+          "evidence_ids": [
+            "t6",
+            "d1"
+          ],
+          "reason": "Paráfrasis de la evidencia citada."
+        },
+        "audience": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        },
+        "rationale": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        }
+      }
+    },
+    {
+      "id": "item4",
+      "type": "recommendation",
+      "title": "Mozilla",
+      "summary": "Enviar candidatura a Mozilla.",
+      "attribution": {
+        "publisher_author": "seans_hq",
+        "speaker": null,
+        "basis": "publisher_only",
+        "evidence_ids": []
+      },
+      "evidence_ids": [
+        "t7",
+        "d1"
+      ],
+      "uncertainties": [],
+      "data": {
+        "action": {
+          "value": "Enviar candidatura a Mozilla.",
+          "certainty": "known",
+          "evidence_ids": [
+            "t7",
+            "d1"
+          ],
+          "reason": "Paráfrasis de la evidencia citada."
+        },
+        "audience": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        },
+        "rationale": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        }
+      }
+    },
+    {
+      "id": "item5",
+      "type": "recommendation",
+      "title": "Rippling",
+      "summary": "Enviar candidatura a Rippling.",
+      "attribution": {
+        "publisher_author": "seans_hq",
+        "speaker": null,
+        "basis": "publisher_only",
+        "evidence_ids": []
+      },
+      "evidence_ids": [
+        "t8",
+        "d1"
+      ],
+      "uncertainties": [],
+      "data": {
+        "action": {
+          "value": "Enviar candidatura a Rippling.",
+          "certainty": "known",
+          "evidence_ids": [
+            "t8",
+            "d1"
+          ],
+          "reason": "Paráfrasis de la evidencia citada."
+        },
+        "audience": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        },
+        "rationale": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        }
+      }
+    },
+    {
+      "id": "item6",
+      "type": "recommendation",
+      "title": "Cohere",
+      "summary": "Enviar candidatura a Cohere.",
+      "attribution": {
+        "publisher_author": "seans_hq",
+        "speaker": null,
+        "basis": "publisher_only",
+        "evidence_ids": []
+      },
+      "evidence_ids": [
+        "t9",
+        "d1"
+      ],
+      "uncertainties": [],
+      "data": {
+        "action": {
+          "value": "Enviar candidatura a Cohere.",
+          "certainty": "known",
+          "evidence_ids": [
+            "t9",
+            "d1"
+          ],
+          "reason": "Paráfrasis de la evidencia citada."
+        },
+        "audience": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        },
+        "rationale": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        }
+      }
+    },
+    {
+      "id": "item7",
+      "type": "recommendation",
+      "title": "Mistral",
+      "summary": "Enviar candidatura a Mistral.",
+      "attribution": {
+        "publisher_author": "seans_hq",
+        "speaker": null,
+        "basis": "publisher_only",
+        "evidence_ids": []
+      },
+      "evidence_ids": [
+        "t10",
+        "d1"
+      ],
+      "uncertainties": [],
+      "data": {
+        "action": {
+          "value": "Enviar candidatura a Mistral.",
+          "certainty": "known",
+          "evidence_ids": [
+            "t10",
+            "d1"
+          ],
+          "reason": "Paráfrasis de la evidencia citada."
+        },
+        "audience": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        },
+        "rationale": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        }
+      }
+    },
+    {
+      "id": "item8",
+      "type": "recommendation",
+      "title": "Anduril",
+      "summary": "Enviar candidatura a Anduril.",
+      "attribution": {
+        "publisher_author": "seans_hq",
+        "speaker": null,
+        "basis": "publisher_only",
+        "evidence_ids": []
+      },
+      "evidence_ids": [
+        "t11",
+        "d1"
+      ],
+      "uncertainties": [],
+      "data": {
+        "action": {
+          "value": "Enviar candidatura a Anduril.",
+          "certainty": "known",
+          "evidence_ids": [
+            "t11",
+            "d1"
+          ],
+          "reason": "Paráfrasis de la evidencia citada."
+        },
+        "audience": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        },
+        "rationale": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        }
+      }
+    },
+    {
+      "id": "item9",
+      "type": "recommendation",
+      "title": "Palantir",
+      "summary": "Enviar candidatura a Palantir.",
+      "attribution": {
+        "publisher_author": "seans_hq",
+        "speaker": null,
+        "basis": "publisher_only",
+        "evidence_ids": []
+      },
+      "evidence_ids": [
+        "t12",
+        "d1"
+      ],
+      "uncertainties": [],
+      "data": {
+        "action": {
+          "value": "Enviar candidatura a Palantir.",
+          "certainty": "known",
+          "evidence_ids": [
+            "t12",
+            "d1"
+          ],
+          "reason": "Paráfrasis de la evidencia citada."
+        },
+        "audience": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        },
+        "rationale": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        }
+      }
+    },
+    {
+      "id": "item10",
+      "type": "recommendation",
+      "title": "Crusoe",
+      "summary": "Enviar candidatura a Crusoe.",
+      "attribution": {
+        "publisher_author": "seans_hq",
+        "speaker": null,
+        "basis": "publisher_only",
+        "evidence_ids": []
+      },
+      "evidence_ids": [
+        "t13",
+        "d1"
+      ],
+      "uncertainties": [],
+      "data": {
+        "action": {
+          "value": "Enviar candidatura a Crusoe.",
+          "certainty": "known",
+          "evidence_ids": [
+            "t13",
+            "d1"
+          ],
+          "reason": "Paráfrasis de la evidencia citada."
+        },
+        "audience": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        },
+        "rationale": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No se ha extraído un valor explícito suficientemente respaldado."
+        }
+      }
+    }
+  ],
+  "collections": [
+    {
+      "id": "companies",
+      "label": "Empresas recomendadas",
+      "kind": "recommendations",
+      "item_ids": [
+        "item1",
+        "item2",
+        "item3",
+        "item4",
+        "item5",
+        "item6",
+        "item7",
+        "item8",
+        "item9",
+        "item10"
+      ],
+      "expected_count": 10,
+      "expected_count_evidence_ids": [
+        "d1"
+      ],
+      "order_semantics": "presentation",
+      "missing_count": 0
+    }
+  ],
+  "evidence": [
+    {
+      "id": "d1",
+      "source_type": "author_description",
+      "method": "adapter",
+      "excerpt": "10 companies to apply to right now! #jobsearch #remotework",
+      "language": null,
+      "locator": {
+        "kind": "post",
+        "asset_id": null,
+        "time": null
+      },
+      "region": null,
+      "asset_sha256": null,
+      "operation_id": "op_access"
+    },
+    {
+      "id": "t1",
+      "source_type": "transcript",
+      "method": "local_asr",
+      "excerpt": "Here are 10 companies you should be applying to as of November, 2026.",
+      "language": "en",
+      "locator": {
+        "kind": "video_time",
+        "asset_id": "asset1",
+        "time": {
+          "start_ms": 0,
+          "end_ms": 3280
+        }
+      },
+      "region": null,
+      "asset_sha256": null,
+      "operation_id": "op_asr_asset1"
+    },
+    {
+      "id": "t2",
+      "source_type": "transcript",
+      "method": "local_asr",
+      "excerpt": "Number one is GitLab.",
+      "language": "en",
+      "locator": {
+        "kind": "video_time",
+        "asset_id": "asset1",
+        "time": {
+          "start_ms": 3500,
+          "end_ms": 4540
+        }
+      },
+      "region": null,
+      "asset_sha256": null,
+      "operation_id": "op_asr_asset1"
+    },
+    {
+      "id": "t3",
+      "source_type": "transcript",
+      "method": "local_asr",
+      "excerpt": "It's fully remote and it has 100 open roles right now.",
+      "language": "en",
+      "locator": {
+        "kind": "video_time",
+        "asset_id": "asset1",
+        "time": {
+          "start_ms": 4640,
+          "end_ms": 7140
+        }
+      },
+      "region": null,
+      "asset_sha256": null,
+      "operation_id": "op_asr_asset1"
+    },
+    {
+      "id": "t4",
+      "source_type": "transcript",
+      "method": "local_asr",
+      "excerpt": "Number two is 11 Labs.",
+      "language": "en",
+      "locator": {
+        "kind": "video_time",
+        "asset_id": "asset1",
+        "time": {
+          "start_ms": 7240,
+          "end_ms": 8480
+        }
+      },
+      "region": null,
+      "asset_sha256": null,
+      "operation_id": "op_asr_asset1"
+    },
+    {
+      "id": "t5",
+      "source_type": "transcript",
+      "method": "local_asr",
+      "excerpt": "It has 150 plus open roles right now and most of them are fully remote.",
+      "language": "en",
+      "locator": {
+        "kind": "video_time",
+        "asset_id": "asset1",
+        "time": {
+          "start_ms": 8720,
+          "end_ms": 12140
+        }
+      },
+      "region": null,
+      "asset_sha256": null,
+      "operation_id": "op_asr_asset1"
+    },
+    {
+      "id": "t6",
+      "source_type": "transcript",
+      "method": "local_asr",
+      "excerpt": "Number three is Upwind.",
+      "language": "en",
+      "locator": {
+        "kind": "video_time",
+        "asset_id": "asset1",
+        "time": {
+          "start_ms": 12300,
+          "end_ms": 13340
+        }
+      },
+      "region": null,
+      "asset_sha256": null,
+      "operation_id": "op_asr_asset1"
+    },
+    {
+      "id": "t7",
+      "source_type": "transcript",
+      "method": "local_asr",
+      "excerpt": "Number four is Mozilla.",
+      "language": "en",
+      "locator": {
+        "kind": "video_time",
+        "asset_id": "asset1",
+        "time": {
+          "start_ms": 13480,
+          "end_ms": 14640
+        }
+      },
+      "region": null,
+      "asset_sha256": null,
+      "operation_id": "op_asr_asset1"
+    },
+    {
+      "id": "t8",
+      "source_type": "transcript",
+      "method": "local_asr",
+      "excerpt": "Five is Rippling.",
+      "language": "en",
+      "locator": {
+        "kind": "video_time",
+        "asset_id": "asset1",
+        "time": {
+          "start_ms": 14820,
+          "end_ms": 15680
+        }
+      },
+      "region": null,
+      "asset_sha256": null,
+      "operation_id": "op_asr_asset1"
+    },
+    {
+      "id": "t9",
+      "source_type": "transcript",
+      "method": "local_asr",
+      "excerpt": "Six is Cohere.",
+      "language": "en",
+      "locator": {
+        "kind": "video_time",
+        "asset_id": "asset1",
+        "time": {
+          "start_ms": 15840,
+          "end_ms": 16800
+        }
+      },
+      "region": null,
+      "asset_sha256": null,
+      "operation_id": "op_asr_asset1"
+    },
+    {
+      "id": "t10",
+      "source_type": "transcript",
+      "method": "local_asr",
+      "excerpt": "Seven is Mistral.",
+      "language": "en",
+      "locator": {
+        "kind": "video_time",
+        "asset_id": "asset1",
+        "time": {
+          "start_ms": 17020,
+          "end_ms": 18000
+        }
+      },
+      "region": null,
+      "asset_sha256": null,
+      "operation_id": "op_asr_asset1"
+    },
+    {
+      "id": "t11",
+      "source_type": "transcript",
+      "method": "local_asr",
+      "excerpt": "Eight is Anduril.",
+      "language": "en",
+      "locator": {
+        "kind": "video_time",
+        "asset_id": "asset1",
+        "time": {
+          "start_ms": 18080,
+          "end_ms": 19100
+        }
+      },
+      "region": null,
+      "asset_sha256": null,
+      "operation_id": "op_asr_asset1"
+    },
+    {
+      "id": "t12",
+      "source_type": "transcript",
+      "method": "local_asr",
+      "excerpt": "Nine, Palantir.",
+      "language": "en",
+      "locator": {
+        "kind": "video_time",
+        "asset_id": "asset1",
+        "time": {
+          "start_ms": 19280,
+          "end_ms": 20260
+        }
+      },
+      "region": null,
+      "asset_sha256": null,
+      "operation_id": "op_asr_asset1"
+    },
+    {
+      "id": "t13",
+      "source_type": "transcript",
+      "method": "local_asr",
+      "excerpt": "And 10, Crusoe.",
+      "language": "en",
+      "locator": {
+        "kind": "video_time",
+        "asset_id": "asset1",
+        "time": {
+          "start_ms": 20380,
+          "end_ms": 21360
+        }
+      },
+      "region": null,
+      "asset_sha256": null,
+      "operation_id": "op_asr_asset1"
+    },
+    {
+      "id": "t14",
+      "source_type": "transcript",
+      "method": "local_asr",
+      "excerpt": "All 10 of these companies post on their own career pages first, which is exactly why you should be using careerhound.io.",
+      "language": "en",
+      "locator": {
+        "kind": "video_time",
+        "asset_id": "asset1",
+        "time": {
+          "start_ms": 21480,
+          "end_ms": 26200
+        }
+      },
+      "region": null,
+      "asset_sha256": null,
+      "operation_id": "op_asr_asset1"
+    },
+    {
+      "id": "t15",
+      "source_type": "transcript",
+      "method": "local_asr",
+      "excerpt": "Filter roles on the past 24 hours so you can get in early.",
+      "language": "en",
+      "locator": {
+        "kind": "video_time",
+        "asset_id": "asset1",
+        "time": {
+          "start_ms": 26380,
+          "end_ms": 28780
+        }
+      },
+      "region": null,
+      "asset_sha256": null,
+      "operation_id": "op_asr_asset1"
+    }
+  ],
+  "processing": {
+    "profile": "local_baseline_v1",
+    "operations": [
+      {
+        "id": "op_access",
+        "purpose": "acquisition",
+        "deployment": "local",
+        "compute_target": "not_applicable",
+        "implementation": "anonymous-platform-adapter",
+        "model": null,
+        "version": null,
+        "recipient": null,
+        "input_data": [
+          "url"
+        ]
+      },
+      {
+        "id": "op_asr_asset1",
+        "purpose": "asr",
+        "deployment": "local",
+        "compute_target": "cpu",
+        "implementation": "faster-whisper",
+        "model": "Systran/faster-whisper-medium",
+        "version": null,
+        "recipient": null,
+        "input_data": [
+          "audio"
+        ]
+      },
+      {
+        "id": "op_extract",
+        "purpose": "extraction",
+        "deployment": "local",
+        "compute_target": "cpu",
+        "implementation": "grounded-patterns-v1",
+        "model": null,
+        "version": null,
+        "recipient": null,
+        "input_data": [
+          "description",
+          "transcript"
+        ]
+      }
+    ],
+    "privacy": {
+      "external_inference_used": false,
+      "external_web_lookup_used": false,
+      "raw_media_retention": "delete_after_request",
+      "result_retention": "caller_managed"
+    }
+  },
+  "issues": [],
+  "extensions": {
+    "runtime:metrics": {
+      "acquisition_seconds": 0.5516558999661356,
+      "pattern_calls": 2,
+      "text_extraction_seconds": 0.002341400133445859,
+      "asr_seconds": 31.828027500072494,
+      "asr_load_seconds": 3.1055133000481874,
+      "total_worker_seconds": 36.93764099990949
+    },
+    "runtime:cli_wall_seconds": 37.53722620010376
+  },
+  "task": "extract",
+  "follow_up": {
+    "extraction_gaps": [],
+    "research_opportunities": []
+  }
+}

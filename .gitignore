@@ -1,0 +1,28 @@
+# Machine-local runtime, models, temporary media, and experiments.
+/work/
+/outputs/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+
+# Reproducible distribution bundles and machine-local configuration.
+*.whl
+*.zip
+/outputs/cli-distribution/
+/outputs/cli-verification/local-cli-config.json
+/outputs/migration-inventory.json
+
+# Credentials and editor/OS state.
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

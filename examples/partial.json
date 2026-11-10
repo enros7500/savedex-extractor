@@ -1,0 +1,296 @@
+{
+  "schema_version": "3.0.0",
+  "request_id": "example_partial",
+  "status": "partial",
+  "generated_at": "2026-11-10T20:38:50.349787+00:00",
+  "source": {
+    "input_url": "https://www.instagram.com/p/EXAMPLE1234/",
+    "canonical_url": "https://www.instagram.com/p/EXAMPLE1234/",
+    "platform": "instagram",
+    "post_id": "EXAMPLE1234",
+    "publisher_author": "example_creator",
+    "media_kind": "video",
+    "asset_count": 1,
+    "inventory_complete": true,
+    "assets": [
+      {
+        "id": "asset1",
+        "index": 1,
+        "kind": "video",
+        "duration_ms": null,
+        "available": false,
+        "processed": false
+      }
+    ]
+  },
+  "request_context": {
+    "instructions": "",
+    "output_language": "en",
+    "visual_processing": "auto"
+  },
+  "topic": {
+    "category": "career",
+    "label": "Career recommendations",
+    "basis": "inferred",
+    "certainty": "uncertain",
+    "evidence_ids": [
+      "d1"
+    ],
+    "reason": "Local classification of the reviewed content; not external verification."
+  },
+  "routing": {
+    "initial_choice": "uncertain",
+    "signals": [],
+    "steps": []
+  },
+  "coverage": {
+    "scope": "reviewed_sources_only",
+    "sufficiency": "insufficient",
+    "examined_asset_ids": [],
+    "unexamined_asset_ids": [
+      "asset1"
+    ],
+    "transcript_ranges": [],
+    "visual_positions": [],
+    "missing_information": [
+      "Additional required content could not be reviewed.",
+      "2 announced items were not recovered."
+    ],
+    "limitations": [
+      "Reviewed sources only; identities, locations, and links have not been verified."
+    ]
+  },
+  "items": [
+    {
+      "id": "item1",
+      "type": "recommendation",
+      "title": "Prepare your CV.",
+      "summary": "Prepare your CV.",
+      "attribution": {
+        "publisher_author": "example_creator",
+        "speaker": null,
+        "basis": "publisher_only",
+        "evidence_ids": []
+      },
+      "evidence_ids": [
+        "d1"
+      ],
+      "uncertainties": [],
+      "data": {
+        "action": {
+          "value": "Prepare your CV.",
+          "certainty": "known",
+          "evidence_ids": [
+            "d1"
+          ],
+          "reason": "Paraphrase of the cited evidence."
+        },
+        "audience": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No sufficiently supported explicit value was extracted."
+        },
+        "rationale": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No sufficiently supported explicit value was extracted."
+        }
+      }
+    },
+    {
+      "id": "item2",
+      "type": "recommendation",
+      "title": "Practice interviews.",
+      "summary": "Practice interviews.",
+      "attribution": {
+        "publisher_author": "example_creator",
+        "speaker": null,
+        "basis": "publisher_only",
+        "evidence_ids": []
+      },
+      "evidence_ids": [
+        "d1"
+      ],
+      "uncertainties": [],
+      "data": {
+        "action": {
+          "value": "Practice interviews.",
+          "certainty": "known",
+          "evidence_ids": [
+            "d1"
+          ],
+          "reason": "Paraphrase of the cited evidence."
+        },
+        "audience": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No sufficiently supported explicit value was extracted."
+        },
+        "rationale": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No sufficiently supported explicit value was extracted."
+        }
+      }
+    },
+    {
+      "id": "item3",
+      "type": "recommendation",
+      "title": "Build a portfolio.",
+      "summary": "Build a portfolio.",
+      "attribution": {
+        "publisher_author": "example_creator",
+        "speaker": null,
+        "basis": "publisher_only",
+        "evidence_ids": []
+      },
+      "evidence_ids": [
+        "d1"
+      ],
+      "uncertainties": [],
+      "data": {
+        "action": {
+          "value": "Build a portfolio.",
+          "certainty": "known",
+          "evidence_ids": [
+            "d1"
+          ],
+          "reason": "Paraphrase of the cited evidence."
+        },
+        "audience": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No sufficiently supported explicit value was extracted."
+        },
+        "rationale": {
+          "value": null,
+          "certainty": "unknown",
+          "evidence_ids": [],
+          "reason": "No sufficiently supported explicit value was extracted."
+        }
+      }
+    }
+  ],
+  "collections": [
+    {
+      "id": "tips",
+      "label": "Career recommendations",
+      "kind": "recommendations",
+      "item_ids": [
+        "item1",
+        "item2",
+        "item3"
+      ],
+      "expected_count": 5,
+      "expected_count_evidence_ids": [
+        "d1"
+      ],
+      "order_semantics": "presentation",
+      "missing_count": 2
+    }
+  ],
+  "evidence": [
+    {
+      "id": "d1",
+      "source_type": "author_description",
+      "method": "adapter",
+      "excerpt": "Five recommendations. Prepare your CV. Practice interviews. Build a portfolio.",
+      "language": "en",
+      "locator": {
+        "kind": "post",
+        "asset_id": null,
+        "time": null
+      },
+      "region": null,
+      "asset_sha256": null,
+      "operation_id": "op_access"
+    }
+  ],
+  "processing": {
+    "profile": "local_baseline_v1",
+    "operations": [
+      {
+        "id": "op_access",
+        "purpose": "acquisition",
+        "deployment": "local",
+        "compute_target": "not_applicable",
+        "implementation": "anonymous-platform-adapter",
+        "model": null,
+        "version": null,
+        "recipient": null,
+        "input_data": [
+          "url"
+        ]
+      },
+      {
+        "id": "op_extract",
+        "purpose": "extraction",
+        "deployment": "local",
+        "compute_target": "cpu",
+        "implementation": "grounded-patterns-v1",
+        "model": null,
+        "version": null,
+        "recipient": null,
+        "input_data": [
+          "description",
+          "transcript"
+        ]
+      }
+    ],
+    "privacy": {
+      "external_inference_used": false,
+      "external_web_lookup_used": false,
+      "raw_media_retention": "delete_after_request",
+      "result_retention": "caller_managed"
+    }
+  },
+  "issues": [
+    {
+      "code": "INCOMPLETE_COLLECTION",
+      "stage": "extraction",
+      "severity": "warning",
+      "message": "Additional required content could not be reviewed.; 2 announced items were not recovered.",
+      "affected_asset_ids": [],
+      "affected_item_ids": [],
+      "retryable": false
+    }
+  ],
+  "extensions": {
+    "runtime:metrics": {}
+  },
+  "task": "extract",
+  "follow_up": {
+    "extraction_gaps": [
+      {
+        "id": "gap1",
+        "item_id": null,
+        "field": null,
+        "kind": "unread_content",
+        "reason": "Additional required content could not be reviewed.",
+        "required_for_request": true,
+        "evidence_ids": [],
+        "asset_ids": [
+          "asset1"
+        ]
+      },
+      {
+        "id": "gap2",
+        "item_id": null,
+        "field": null,
+        "kind": "missing_announced_item",
+        "reason": "2 announced items were not recovered.",
+        "required_for_request": true,
+        "evidence_ids": [
+          "d1"
+        ],
+        "asset_ids": []
+      }
+    ],
+    "research_opportunities": []
+  }
+}
