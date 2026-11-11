@@ -1,7 +1,7 @@
 import unittest,json,sys,os
 from unittest.mock import patch
 from types import SimpleNamespace
-from content_extractor.adapters import parse_instagram
+from savedex_extractor.adapters import parse_instagram
 
 class AdapterTests(unittest.TestCase):
     def test_nested_embed_and_image_inventory(self):
@@ -16,7 +16,7 @@ class AdapterTests(unittest.TestCase):
     def test_login_page_does_not_invent_metadata(self):
         with self.assertRaises(OSError):parse_instagram('<html>Login</html>','ABCDEFGHIJK')
     def test_youtube_disables_plugins_and_browser_credentials(self):
-        from content_extractor.adapters import obtain
+        from savedex_extractor.adapters import obtain
         options={}
         class FakeDL:
             def __init__(self,params):options.update(params)

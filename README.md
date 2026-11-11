@@ -1,10 +1,10 @@
 <div align="center">
 
-# Video Extractor Summary
+# Savedex Extractor
 
 **Extract useful information from a reel. Keep the evidence.**
 
-[![CI](https://github.com/enros7500/video-extractor-summary/actions/workflows/ci.yml/badge.svg)](https://github.com/enros7500/video-extractor-summary/actions/workflows/ci.yml)
+[![CI](https://github.com/enros7500/savedex-extractor/actions/workflows/ci.yml/badge.svg)](https://github.com/enros7500/savedex-extractor/actions/workflows/ci.yml)
 ![Version](https://img.shields.io/badge/version-1.0.0-2563eb)
 ![License](https://img.shields.io/badge/license-MIT-15803d)
 ![Platform](https://img.shields.io/badge/platform-Windows_x64-0078d4)
@@ -46,20 +46,20 @@ The installation is project-relative. No environment activation or manual PATH c
 **Readable summary**
 
 ```powershell
-.\reel summary "REEL_URL"
+.\savedex-extractor summary "REEL_URL"
 ```
 
 **Structured JSON**
 
 ```powershell
-.\reel "REEL_URL"
+.\savedex-extractor "REEL_URL"
 ```
 
 **Save the result and summarize it later**
 
 ```powershell
-.\reel "REEL_URL" | Out-File outputs/result.json -Encoding utf8
-.\reel summary --result outputs/result.json
+.\savedex-extractor "REEL_URL" | Out-File outputs/result.json -Encoding utf8
+.\savedex-extractor summary --result outputs/result.json
 ```
 
 Use a single Instagram post/reel or YouTube video URL. A saved-result summary requires neither network access nor model execution. Cancel a running extraction with **Ctrl+C**.
@@ -135,7 +135,7 @@ Invoke the CLI as a subprocess. Write one UTF-8 request JSON to stdin, close std
 The example URL is a placeholder; supply a real publication URL.
 
 ```powershell
-& .\work\asr-venv\Scripts\content-extractor.exe extract --request - --model-dir work/models/faster-whisper-medium
+& .\work\asr-venv\Scripts\savedex-extractor.exe extract --request - --model-dir work/models/faster-whisper-medium
 ```
 
 `extract` writes one result JSON to stdout. `summary` writes readable text. Progress and diagnostics use stderr. Exit codes distinguish success (`0`), partial (`2`), and errors. See the [CLI reference](docs/CLI.md) and the [Node client](examples/backend-client.mjs).
@@ -174,7 +174,7 @@ The medium revision is pinned. Qwen's Ollama tag may change upstream; its instal
 GitHub Actions runs the automated tests on Windows with Python 3.11 and 3.12, without downloading inference packages or model weights. See [CI instructions](docs/CI.md), [contributing](CONTRIBUTING.md), and the [V2 roadmap](ROADMAP.md).
 
 ```text
-src/content_extractor/   CLI implementation and schemas
+src/savedex_extractor/   CLI implementation and schemas
 tests/                  Application tests and fixtures
 scripts/                Installation, provisioning, and repository checks
 examples/               Synthetic JSON examples and backend client

@@ -80,7 +80,7 @@ def assemble_result(request,bundle,sources,draft,operations,processed,metrics,ex
 
 def transcribe(path,model_dir,job,asset):
     output=Path(job)/(asset['id']+'-asr.json');t=time.perf_counter()
-    proc=subprocess.run([sys.executable,'-m','content_extractor.asr',str(path),str(model_dir),str(output)],stdout=subprocess.DEVNULL,stderr=subprocess.PIPE,creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0)
+    proc=subprocess.run([sys.executable,'-m','savedex_extractor.asr',str(path),str(model_dir),str(output)],stdout=subprocess.DEVNULL,stderr=subprocess.PIPE,creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0)
     if proc.returncode or not output.is_file():raise CapabilityUnavailable('Local CPU transcription failed')
     result=json.loads(output.read_text(encoding='utf-8'));result['subprocess_seconds']=time.perf_counter()-t;return result
 

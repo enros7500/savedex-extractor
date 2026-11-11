@@ -1,12 +1,12 @@
 import unittest,tempfile,json,sys
 from unittest.mock import patch
 from pathlib import Path
-from content_extractor.pipeline import assemble_result
-from content_extractor.contracts import normalize_request,validate_result
+from savedex_extractor.pipeline import assemble_result
+from savedex_extractor.contracts import normalize_request,validate_result
 
 class PipelineTests(unittest.TestCase):
     def test_literal_location_mentions_are_not_geocoded(self):
-        from content_extractor.pipeline import literal_mentions
+        from savedex_extractor.pipeline import literal_mentions
         text='Demo Cafe; Address: Calle de muestra 12; Coordinates: 40.0, -3.0; Maps: https://maps.example/demo'
         fields=literal_mentions(text)
         self.assertEqual(fields['address_mentioned'],'Calle de muestra 12')
@@ -26,7 +26,7 @@ class PipelineTests(unittest.TestCase):
         r=assemble_result(request,bundle,source,draft,[],[],{})
         validate_result(r);self.assertEqual(r['status'],'success');self.assertIsNone(r['items'][0]['data']['url_mentioned']['value'])
         self.assertEqual(r['collections'][0]['kind'],'other')
-        from content_extractor.cli import recover_checkpoint
+        from savedex_extractor.cli import recover_checkpoint
         with tempfile.TemporaryDirectory() as folder:
             (Path(folder)/'checkpoint.json').write_text(json.dumps(r),encoding='utf-8')
             recovered=recover_checkpoint(Path(folder))
@@ -34,12 +34,12 @@ class PipelineTests(unittest.TestCase):
             self.assertEqual(recovered['status'],'partial')
             self.assertEqual(len(recovered['items']),1)
             self.assertEqual(recovered['issues'][-1]['code'],'RESOURCE_LIMIT')
-            from content_extractor.worker import main
+            from savedex_extractor.worker import main
             folder=Path(folder);(folder/'ready').touch()
             (folder/'job.json').write_text(json.dumps({'request':request,'model_dir':'unused','quiet':True,'log_format':'jsonl'}),encoding='utf-8')
             def failed_phase(request,model,job,log,checkpoint):
                 checkpoint(r);raise ValueError('Later extraction phase failed')
-            with patch.object(sys,'argv',['worker',str(folder)]),patch('content_extractor.pipeline.run_pipeline',side_effect=failed_phase):code=main()
+            with patch.object(sys,'argv',['worker',str(folder)]),patch('savedex_extractor.pipeline.run_pipeline',side_effect=failed_phase):code=main()
             self.assertEqual(code,2)
             body=json.loads((folder/'result.json').read_text(encoding='utf-8'))
             self.assertEqual(len(body['items']),1);self.assertEqual(body['status'],'partial')

@@ -8,4 +8,4 @@
 - [V2 roadmap](../ROADMAP.md).
 - [Third-party notices](../THIRD_PARTY_NOTICES.md).
 
-Canonical request and result schemas are in `src/content_extractor/schemas/` at the repository root.
+Canonical request and result schemas are in `src/savedex_extractor/schemas/` at the repository root.

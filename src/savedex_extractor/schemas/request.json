@@ -43,6 +43,6 @@
   ],
   "additionalProperties": false,
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "urn:content-extractor:request:3.0.0",
+  "$id": "urn:savedex-extractor:request:3.0.0",
   "title": "Extraction request without external research, 3.0.0"
 }

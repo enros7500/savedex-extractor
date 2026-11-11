@@ -1,4 +1,4 @@
-# Content Extractor CLI · 1.0.0
+# Savedex Extractor CLI · 1.0.0
 
 A local tool that any backend can invoke as a subprocess. Content contract **3.0.0**, CLI interface **1.1.0**. Tested on Windows with medium on CPU. No external AI, web research, geocoding, or Maps lookup.
 
@@ -9,23 +9,23 @@ For one-command Windows installation, run `./install.cmd` at the repository root
 Open PowerShell in the project folder and run with a real publication URL (the example URL below is a placeholder):
 
 ```powershell
-.\reel "https://www.instagram.com/p/EXAMPLE1234/"
+.\savedex-extractor "https://www.instagram.com/p/EXAMPLE1234/"
 ```
 
 The default prints a single JSON object. For a readable conclusion instead:
 
 ```powershell
-.\reel summary "https://www.instagram.com/p/EXAMPLE1234/"
+.\savedex-extractor summary "https://www.instagram.com/p/EXAMPLE1234/"
 ```
 
 To save JSON, then read it without processing the reel again:
 
 ```powershell
-.\reel "https://www.instagram.com/p/EXAMPLE1234/" | Out-File outputs/my-result.json -Encoding utf8
-.\reel summary --result outputs/my-result.json
+.\savedex-extractor "https://www.instagram.com/p/EXAMPLE1234/" | Out-File outputs/my-result.json -Encoding utf8
+.\savedex-extractor summary --result outputs/my-result.json
 ```
 
-The short launcher resolves the installed environment and model under `work/` relative to the repository root. The project-root `reel.cmd` calls `scripts/reel_launcher.py`. `reel --help` and `reel summary --help` show available options.
+The short launcher resolves the installed environment and model under `work/` relative to the repository root. The project-root `savedex-extractor.cmd` calls `scripts/savedex_launcher.py`. `savedex-extractor --help` and `savedex-extractor summary --help` show available options.
 
 The summary reports extracted items, announced counts, sources actually reviewed, unreviewed media, unresolved gaps, and elapsed processing time when recorded. It formats existing data without another AI call or research. A `success` status means the extractor considered the reviewed sources sufficient; it does not establish full video coverage. Saved results retain their original text and language; the summary does not translate or repair earlier extractions.
 
@@ -35,7 +35,7 @@ The installed CLI is available at:
 
 ```powershell
 $base = (Get-Location).Path
-$cli = "$base\work\asr-venv\Scripts\content-extractor.exe"
+$cli = "$base\work\asr-venv\Scripts\savedex-extractor.exe"
 $model = "$base\work\models\faster-whisper-medium"
 & $cli doctor --json --model-dir $model
 & $cli extract --url 'https://www.instagram.com/p/EXAMPLE1234/' --model-dir $model
@@ -59,7 +59,7 @@ Use `extract` for machine integration. Send one UTF-8 request JSON through stdin
 }
 ```
 
-Invoke `content-extractor extract --request - --model-dir MODEL_DIR --log-format jsonl`. Alternatively use `--request FILE` or `--url URL`. Do not mix input modes. Requests without `output_language` default to `en`; callers requiring another language should set it explicitly.
+Invoke `savedex-extractor extract --request - --model-dir MODEL_DIR --log-format jsonl`. Alternatively use `--request FILE` or `--url URL`. Do not mix input modes. Requests without `output_language` default to `en`; callers requiring another language should set it explicitly.
 
 - stdout: exactly one JSON object for `extract`, readable text for `summary`.
 - stderr: operational logs, separate from the result.
@@ -97,11 +97,11 @@ python -m venv .venv
 
 Provision separately before extracting:
 
-- CTranslate2 model `Systran/faster-whisper-medium` with model.bin, config.json, tokenizer.json and vocabulary.txt. Tested revision: `08e178d48790749d25932bbc082711ddcfdfbc4f`. Set `--model-dir` or `CONTENT_EXTRACTOR_MODEL_DIR`.
+- CTranslate2 model `Systran/faster-whisper-medium` with model.bin, config.json, tokenizer.json and vocabulary.txt. Tested revision: `08e178d48790749d25932bbc082711ddcfdfbc4f`. Set `--model-dir` or `SAVEDEX_EXTRACTOR_MODEL_DIR`.
 - Ollama and `qwen2.5:3b` already installed locally. The CLI starts its private temporary runtime only when needed; no permanent Ollama server is required.
-- Writable work directory via `--work-dir` or `CONTENT_EXTRACTOR_WORK_DIR`; otherwise an application-owned system temporary directory is used.
+- Writable work directory via `--work-dir` or `SAVEDEX_EXTRACTOR_WORK_DIR`; otherwise an application-owned system temporary directory is used.
 
-The medium directory must allow a sidecar `.content-extractor.lock`; weights are not changed. Invocations using the same model directory share a lock even if work directories differ. The caller manages its own queue. The package does not include model weights, the Python environment, or Ollama. Linux uses `.venv/bin/`; this release was verified on Windows, not certified on Linux.
+The medium directory must allow a sidecar `.savedex-extractor.lock`; weights are not changed. Invocations using the same model directory share a lock even if work directories differ. The caller manages its own queue. The package does not include model weights, the Python environment, or Ollama. Linux uses `.venv/bin/`; this release was verified on Windows, not certified on Linux.
 
 ## Limits and verification
 

@@ -10,11 +10,11 @@ def main():
     if args and args[0]=='summary':
         command=args.pop(0)
     if not args:
-        print('Usage: reel URL | reel summary URL | reel summary --result FILE',file=sys.stderr)
+        print('Usage: savedex-extractor URL | savedex-extractor summary URL | savedex-extractor summary --result FILE',file=sys.stderr)
         return 64
     if args[0] not in ['--result','--help','-h']:
         args=['--url',args[0],*args[1:]]
-    cli=root/'work/asr-venv/Scripts/content-extractor.exe'
+    cli=root/'work/asr-venv/Scripts/savedex-extractor.exe'
     try:
         return subprocess.call([str(cli),command,'--model-dir',str(root/'work/models/faster-whisper-medium'),'--work-dir',str(root/'work/cli-jobs'),*args])
     except FileNotFoundError:

@@ -13,11 +13,11 @@ def emit(result,code,readable=False):
     print(render_summary(result) if readable else json.dumps(result,ensure_ascii=False),flush=True)
     return code
 def parser():
-    p=Parser(prog='content-extractor',description='Extract publication content locally, or print a readable summary.');p.add_argument('--version',action='store_true');p.add_argument('--json',action='store_true')
+    p=Parser(prog='savedex-extractor',description='Extract publication content locally, or print a readable summary.');p.add_argument('--version',action='store_true');p.add_argument('--json',action='store_true')
     sub=p.add_subparsers(dest='command',parser_class=Parser)
     for name in ['extract','summary','doctor']:
-        s=sub.add_parser(name);s.add_argument('--model-dir',default=os.environ.get('CONTENT_EXTRACTOR_MODEL_DIR',str(Path(__file__).resolve().parents[1]/'models/medium')))
-        s.add_argument('--work-dir',default=os.environ.get('CONTENT_EXTRACTOR_WORK_DIR',str(Path(tempfile.gettempdir())/'content-extractor')))
+        s=sub.add_parser(name);s.add_argument('--model-dir',default=os.environ.get('SAVEDEX_EXTRACTOR_MODEL_DIR',str(Path(__file__).resolve().parents[1]/'models/medium')))
+        s.add_argument('--work-dir',default=os.environ.get('SAVEDEX_EXTRACTOR_WORK_DIR',str(Path(tempfile.gettempdir())/'savedex-extractor')))
         if name=='doctor':s.add_argument('--json',action='store_true');continue
         modes=s.add_mutually_exclusive_group(required=True);modes.add_argument('--request');modes.add_argument('--url')
         if name=='summary':modes.add_argument('--result',help='Summarize a saved result JSON without processing media again')
@@ -83,7 +83,7 @@ def main(argv=None):
         readable=args.command=='summary'
         if args.version:
             info={'cli_interface_version':'1.1.0','package_version':__version__,'supported_content_schema_versions':['3.0.0']}
-            print(json.dumps(info) if args.json else 'content-extractor '+__version__);return 0
+            print(json.dumps(info) if args.json else 'savedex-extractor '+__version__);return 0
         if args.command=='doctor':return doctor(args)
         if args.command not in ['extract','summary']:raise UsageError('A command is required')
         if readable and args.result:
@@ -111,13 +111,13 @@ def main(argv=None):
         root=Path(args.work_dir).resolve();root.mkdir(parents=True,exist_ok=True)
         reap_abandoned_jobs(root)
         with ModelLock(model):
-            job=Path(tempfile.mkdtemp(prefix='content-extractor-',dir=root))
+            job=Path(tempfile.mkdtemp(prefix='savedex-extractor-',dir=root))
             import psutil
             (job/'owner.json').write_text(json.dumps({'pid':os.getpid(),'created_time':psutil.Process().create_time()}),encoding='utf-8')
             (job/'job.json').write_text(json.dumps({'request':request,'model_dir':str(model),'quiet':args.quiet,'log_format':args.log_format}),encoding='utf-8')
             budget=args.timeout_seconds-(time.perf_counter()-start)
             if budget<=0:raise TimeoutError('Deadline exceeded')
-            code=run_supervised([sys.executable,'-m','content_extractor.worker',str(job)],job,budget,args.log_format)
+            code=run_supervised([sys.executable,'-m','savedex_extractor.worker',str(job)],job,budget,args.log_format)
             path=job/'result.json'
             if not path.is_file():return respond(empty_result(request,'EXTRACTION_FAILED','extraction','The extraction process ended without a valid result.'),70)
             try:r=json.loads(path.read_text(encoding='utf-8'));validate_result(r)

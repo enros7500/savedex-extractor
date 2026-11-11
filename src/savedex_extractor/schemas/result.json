@@ -605,7 +605,7 @@
     }
   ],
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "urn:content-extractor:result:3.0.0",
+  "$id": "urn:savedex-extractor:result:3.0.0",
   "title": "Content extracted from a publication, 3.0.0",
   "$defs": {
     "range": {

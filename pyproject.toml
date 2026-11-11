@@ -3,7 +3,7 @@ requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "local-content-extractor"
+name = "savedex-extractor"
 version = "1.0.0"
 description = "Local CPU content extraction CLI with evidence, no research"
 readme = "README.md"
@@ -16,14 +16,14 @@ dependencies = ["faster-whisper==1.2.1", "ctranslate2==4.8.5", "av==16.1.0", "js
 ocr = ["rapidocr_onnxruntime==1.4.4"]
 
 [project.scripts]
-content-extractor = "content_extractor.cli:main"
+savedex-extractor = "savedex_extractor.cli:main"
 
 [tool.setuptools.package-data]
-content_extractor = ["schemas/*.json"]
+savedex_extractor = ["schemas/*.json"]
 
 [tool.setuptools.package-dir]
 "" = "src"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["content_extractor*"]
+include = ["savedex_extractor*"]

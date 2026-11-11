@@ -97,7 +97,7 @@ class SetupTests(unittest.TestCase):
 
     def test_owned_process_is_cleaned_when_provisioning_body_fails(self):
         module=load_setup()
-        with tempfile.TemporaryDirectory() as d,patch('content_extractor.supervisor.WindowsJob') as job,patch('content_extractor.supervisor.terminate_tree') as terminate,patch.object(module.subprocess,'Popen') as spawn,patch.object(module,'tags',return_value=[]):
+        with tempfile.TemporaryDirectory() as d,patch('savedex_extractor.supervisor.WindowsJob') as job,patch('savedex_extractor.supervisor.terminate_tree') as terminate,patch.object(module.subprocess,'Popen') as spawn,patch.object(module,'tags',return_value=[]):
             spawn.return_value.poll.return_value=None
             with self.assertRaisesRegex(RuntimeError,'body failure'):
                 with module.private_runtime(Path(d),'ollama'):
@@ -110,7 +110,7 @@ class SetupTests(unittest.TestCase):
         module=load_setup()
         with tempfile.TemporaryDirectory() as d:
             root=Path(d);scripts=root/'work/asr-venv/Scripts';scripts.mkdir(parents=True)
-            for name in ['python.exe','content-extractor.exe']:(scripts/name).touch()
+            for name in ['python.exe','savedex-extractor.exe']:(scripts/name).touch()
             from types import SimpleNamespace
             with patch.object(module,'run_checked',return_value=SimpleNamespace(stdout='{"status":"ready","checks":{"ocr":false}}')):
                 with self.assertRaisesRegex(RuntimeError,'including OCR'):module.check_ready(root)

@@ -4,7 +4,7 @@ import psutil
 
 class Busy(RuntimeError):pass
 class ModelLock:
-    def __init__(self,root):self.path=Path(root).resolve()/'.content-extractor.lock';self.handle=None
+    def __init__(self,root):self.path=Path(root).resolve()/'.savedex-extractor.lock';self.handle=None
     def __enter__(self):
         self.handle=self.path.open('a+b')
         if os.fstat(self.handle.fileno()).st_size==0:self.handle.write(b'0');self.handle.flush()
@@ -91,7 +91,7 @@ def run_supervised(command,job_dir,timeout,log_format='text'):
         if proc and proc.stderr:proc.stderr.close()
 def clean_job(path,root):
     path=Path(path).resolve();root=Path(root).resolve()
-    if not path.is_relative_to(root) or not path.name.startswith('content-extractor-'):raise ValueError('Refusing cleanup outside owned job')
+    if not path.is_relative_to(root) or not path.name.startswith('savedex-extractor-'):raise ValueError('Refusing cleanup outside owned job')
     for attempt in range(20):
         try:shutil.rmtree(path);return
         except FileNotFoundError:return
@@ -100,7 +100,7 @@ def clean_job(path,root):
             time.sleep(.15)
 def reap_abandoned_jobs(root):
     root=Path(root).resolve()
-    for path in root.glob('content-extractor-*'):
+    for path in root.glob('savedex-extractor-*'):
         if not path.is_dir() or not path.resolve().is_relative_to(root):continue
         try:
             owner=json.loads((path/'owner.json').read_text(encoding='utf-8'))

@@ -26,7 +26,7 @@ jobs:
       HF_HUB_DISABLE_TELEMETRY: '1'
       HF_HUB_DISABLE_IMPLICIT_TOKEN: '1'
       PYTHONUTF8: '1'
-      CONTENT_EXTRACTOR_MODEL_DIR: intentionally-missing-ci-models
+      SAVEDEX_EXTRACTOR_MODEL_DIR: intentionally-missing-ci-models
     steps:
       - uses: actions/checkout@v6
         with:
@@ -50,4 +50,4 @@ jobs:
       - name: Run provisioning and bootstrap tests without downloads
         run: python -m unittest discover -s scripts -p "test_*.py" -v
       - name: Check CLI entry point
-        run: content-extractor --version --json
+        run: savedex-extractor --version --json

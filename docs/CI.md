@@ -19,4 +19,4 @@ python -m venv work/ci-venv
 
 Package/build dependency installation requires network access unless an appropriate package cache is available. Test execution itself makes no platform/model download requests. A model-free test environment intentionally does not satisfy all runtime dependencies; use `install.cmd` for real extraction.
 
-Current hosted results are available on [GitHub Actions](https://github.com/enros7500/video-extractor-summary/actions/workflows/ci.yml). Report local checks separately from hosted CI results; a green unit-test run does not imply real model-quality or clean-machine installation validation.
+Current hosted results are available on [GitHub Actions](https://github.com/enros7500/savedex-extractor/actions/workflows/ci.yml). Report local checks separately from hosted CI results; a green unit-test run does not imply real model-quality or clean-machine installation validation.

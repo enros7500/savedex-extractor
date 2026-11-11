@@ -55,7 +55,7 @@ def tags(port):
 
 @contextmanager
 def private_runtime(root, ollama):
-    from content_extractor.supervisor import WindowsJob, terminate_tree
+    from savedex_extractor.supervisor import WindowsJob, terminate_tree
     with socket.socket() as reservation:
         reservation.bind(('127.0.0.1',0));port=reservation.getsockname()[1]
     env={**os.environ,'OLLAMA_HOST':f'127.0.0.1:{port}','OLLAMA_NO_CLOUD':'1','OLLAMA_KEEP_ALIVE':'0','OLLAMA_NUM_PARALLEL':'1','OLLAMA_MAX_LOADED_MODELS':'1'}
@@ -95,9 +95,9 @@ def provision_qwen(root, ollama):
 
 def check_ready(root):
     python=root/'work/asr-venv/Scripts/python.exe'
-    cli=root/'work/asr-venv/Scripts/content-extractor.exe'
+    cli=root/'work/asr-venv/Scripts/savedex-extractor.exe'
     if not python.is_file() or not cli.is_file():raise RuntimeError('The CLI environment is missing; run install.cmd.')
-    completed=run_checked([str(python),'-m','content_extractor','doctor','--json','--model-dir',str(root/'work/models/faster-whisper-medium'),'--work-dir',str(root/'work/cli-jobs')],cwd=root,capture_output=True,text=True,encoding='utf-8')
+    completed=run_checked([str(python),'-m','savedex_extractor','doctor','--json','--model-dir',str(root/'work/models/faster-whisper-medium'),'--work-dir',str(root/'work/cli-jobs')],cwd=root,capture_output=True,text=True,encoding='utf-8')
     result=json.loads(completed.stdout)
     if result.get('status')!='ready' or not result.get('checks',{}).get('ocr'):raise RuntimeError('The environment is not ready, including OCR; rerun install.cmd.')
     print(json.dumps(result,ensure_ascii=False),flush=True)
@@ -124,7 +124,7 @@ def main(argv=None):
             run_checked([sys.executable,str(ROOT/'scripts/download_asr_model.py')],cwd=ROOT)
         provision_qwen(ROOT,args.ollama)
         check_ready(ROOT)
-        print('Ready. Run: .\\reel summary "REEL_URL"',flush=True)
+        print('Ready. Run: .\\savedex-extractor summary "REEL_URL"',flush=True)
         return 0
     except KeyboardInterrupt:
         print('Setup interrupted; rerun install.cmd to resume.',file=sys.stderr)

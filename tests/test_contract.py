@@ -1,5 +1,5 @@
 import unittest
-from content_extractor.contracts import normalize_request, empty_result, validate_result
+from savedex_extractor.contracts import normalize_request, empty_result, validate_result
 
 class ContractTests(unittest.TestCase):
     def test_defaults_and_research_rejected(self):

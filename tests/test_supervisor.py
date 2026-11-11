@@ -1,6 +1,6 @@
 import unittest,tempfile,sys,time,json,subprocess,os
 from pathlib import Path
-from content_extractor.supervisor import ModelLock,Busy,run_supervised
+from savedex_extractor.supervisor import ModelLock,Busy,run_supervised
 
 class SupervisorTests(unittest.TestCase):
     def test_same_model_is_exclusive_even_with_different_jobs(self):
@@ -17,10 +17,10 @@ class SupervisorTests(unittest.TestCase):
     def test_normal_worker_exit_is_preserved(self):
         with tempfile.TemporaryDirectory() as d:self.assertEqual(run_supervised([sys.executable,'-c','pass'],Path(d),10),0)
     def test_only_abandoned_owned_jobs_are_reaped(self):
-        from content_extractor.supervisor import reap_abandoned_jobs
+        from savedex_extractor.supervisor import reap_abandoned_jobs
         import psutil
         with tempfile.TemporaryDirectory() as d:
-            root=Path(d);stale=root/'content-extractor-stale';active=root/'content-extractor-active';foreign=root/'unrelated'
+            root=Path(d);stale=root/'savedex-extractor-stale';active=root/'savedex-extractor-active';foreign=root/'unrelated'
             for p in [stale,active,foreign]:p.mkdir()
             (stale/'owner.json').write_text(json.dumps({'pid':2147483647,'created_time':0}))
             (active/'owner.json').write_text(json.dumps({'pid':os.getpid(),'created_time':psutil.Process().create_time()}))

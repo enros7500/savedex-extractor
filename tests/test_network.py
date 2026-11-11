@@ -1,5 +1,5 @@
 import unittest
-from content_extractor.network import normalize_url, check_public_addresses, check_media_url
+from savedex_extractor.network import normalize_url, check_public_addresses, check_media_url
 
 class NetworkTests(unittest.TestCase):
     def test_only_single_supported_posts(self):
